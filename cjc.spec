@@ -1,3 +1,7 @@
+#
+# TODO:
+# - on amd64 with .pyc files search main module at BUILDROOT,
+#
 Summary:	Console Jabber Client
 Summary(pl):	CJC - konsolowy klient Jabbera
 Name:		cjc
