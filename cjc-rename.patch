@@ -1,0 +1,11 @@
+--- cjc-0.5.20050125a/cjc/main.py.orig	2005-03-11 12:58:28.700142072 +0100
++++ cjc-0.5.20050125a/cjc/main.py	2005-03-11 12:58:37.671778176 +0100
+@@ -1303,7 +1303,7 @@
+                     ritems=None
+                 if ritems:
+                     if len(ritems)==1:
+-                        return ritems[0].jid
++                        return [ritems[0].jid]
+             try:
+                 return [pyxmpp.JID(name)]
+             except pyxmpp.JIDError:
