@@ -13,15 +13,19 @@ Requires:	python-pyxmpp = 0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A Jabber client for text terminals with user interface similar to those known
-from popular IRC clients.
+A Jabber client for text terminals with user interface similar to
+those known from popular IRC clients.
+
+%description -l pl
+Klient Jabbera dla terminali tekstowych z interfejsem u¿ytkownika
+podobnym do tego znanego z popularnych klientów IRC.
 
 %prep
-%setup -qn cjc-%{version}
+%setup -q
 
 %build
-
-%{__make} prefix=%{_prefix}
+%{__make} \
+	prefix=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
