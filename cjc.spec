@@ -10,6 +10,7 @@ Source0:	http://cjc.jabberstudio.org/snapshots/cjc-%{version}.tar.gz
 # Source0-md5:	d3031815efc022b549df3dc1059025c8
 URL:		http://cjc.jabberstudio.org/
 BuildRequires:	python-modules >= 2.3.0
+%pyrequires_eq	python-modules
 Requires:	python-pyxmpp >= 0.5.s20041101
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
