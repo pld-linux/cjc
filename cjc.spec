@@ -48,4 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README TODO ChangeLog doc/manual.html
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/%{name}
+%dir %{_datadir}/%{name}/%{name}/ui
+%dir %{_datadir}/%{name}/plugins
+%{_datadir}/%{name}/%{name}/*.py
+%{_datadir}/%{name}/%{name}/ui/*.py
+%{_datadir}/%{name}/plugins/*.py
