@@ -1,13 +1,14 @@
 Summary:	Console Jabber Client
 Summary(pl):	CJC - konsolowy klient Jabbera
 Name:		cjc
-Version:	0.5.s20041219
+Version:	0.5.20050125a
 Release:	2
 License:	GPL
 Group:		Applications/Communications
 #Source0:	http://www.jabberstudio.org/files/cjc/cjc-%{version}.tar.gz
-Source0:	http://cjc.jabberstudio.org/snapshots/cjc-%{version}.tar.gz
-# Source0-md5:	d3031815efc022b549df3dc1059025c8
+#Source0:	http://cjc.jabberstudio.org/snapshots/cjc-%{version}.tar.gz
+Source0:	http://www.jajcus.net/files/cjc-%{version}.tar.gz
+# Source0-md5:	c5811092b8077385966227ce33e0905f
 URL:		http://cjc.jabberstudio.org/
 BuildRequires:	python-modules >= 2.3.0
 %pyrequires_eq	python-modules
