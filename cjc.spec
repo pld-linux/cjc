@@ -1,18 +1,14 @@
 #
-# TODO:
-# - on amd64 with .pyc files search main module at BUILDROOT,
-#
 Summary:	Console Jabber Client
 Summary(pl):	CJC - konsolowy klient Jabbera
 Name:		cjc
-Version:	0.5.s20051025
+Version:	1.0.0
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
-#Source0:	http://www.jajcus.net/files/cjc-%{version}.tar.gz
-Source0:	http://cjc.jabberstudio.org/snapshots/cjc-%{version}.tar.gz
-# Source0-md5:	472fae8d8fabca0cd2fac77d9c484671
+Source0:	http://files.jabberstudio.org/cjc/cjc-%{version}.tar.gz
+# Source0-md5:	a557fabab8ca2070f444a307cb18d66a
 URL:		http://cjc.jabberstudio.org/
 BuildRequires:	python-modules >= 2.3.0
 %pyrequires_eq	python-modules
@@ -43,6 +39,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT%{_prefix}/share/doc
 
+rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}{,/ui}/*.py
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -54,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/%{name}
 %dir %{_datadir}/%{name}/%{name}/ui
 %dir %{_datadir}/%{name}/plugins
-%{_datadir}/%{name}/%{name}/*.py
-%{_datadir}/%{name}/%{name}/ui/*.py
-%{_datadir}/%{name}/plugins/*.py
+%{_datadir}/%{name}/%{name}/*.py[co]
+%{_datadir}/%{name}/%{name}/ui/*.py[co]
+%{_datadir}/%{name}/plugins/*
