@@ -39,6 +39,9 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT%{_prefix}/share/doc
 
+%py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}
+%py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}/plugins
+
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}{,/ui}/*.py
 
 %clean
@@ -52,6 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/%{name}
 %dir %{_datadir}/%{name}/%{name}/ui
 %dir %{_datadir}/%{name}/plugins
-%{_datadir}/%{name}/%{name}/*.py[co]
-%{_datadir}/%{name}/%{name}/ui/*.py[co]
+%{_datadir}/%{name}/%{name}/*.pyc
+%{_datadir}/%{name}/%{name}/ui/*.pyc
 %{_datadir}/%{name}/plugins/*
