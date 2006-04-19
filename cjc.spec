@@ -6,7 +6,7 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
-Source0:	http://files.jabberstudio.org/cjc/cjc-%{version}.tar.gz
+Source0:	http://files.jabberstudio.org/cjc/%{name}-%{version}.tar.gz
 # Source0-md5:	a557fabab8ca2070f444a307cb18d66a
 URL:		http://cjc.jabberstudio.org/
 BuildRequires:	python-modules >= 2.3.0
