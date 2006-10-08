@@ -12,6 +12,7 @@ URL:		http://cjc.jabberstudio.org/
 BuildRequires:	python-modules >= 2.3.0
 %pyrequires_eq	python-modules
 Requires:	python-pyxmpp >= 0.5.s20051015
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
