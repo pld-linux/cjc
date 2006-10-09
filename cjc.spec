@@ -2,7 +2,7 @@ Summary:	Console Jabber Client
 Summary(pl):	CJC - konsolowy klient Jabbera
 Name:		cjc
 Version:	1.0.0
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
