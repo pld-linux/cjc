@@ -1,0 +1,2 @@
+- fixed %files, .pyc files destroy this package (searching modules at
+  BUILDROOT!),
