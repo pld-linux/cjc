@@ -1,5 +1,5 @@
 Summary:	Console Jabber Client
-Summary(pl):	CJC - konsolowy klient Jabbera
+Summary(pl.UTF-8):   CJC - konsolowy klient Jabbera
 Name:		cjc
 Version:	1.0.0
 Release:	5
@@ -20,9 +20,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A Jabber client for text terminals with user interface similar to
 those known from popular IRC clients.
 
-%description -l pl
-Klient Jabbera dla terminali tekstowych z interfejsem uøytkownika
-podobnym do tego znanego z popularnych klientÛw IRC.
+%description -l pl.UTF-8
+Klient Jabbera dla terminali tekstowych z interfejsem u≈ºytkownika
+podobnym do tego znanego z popularnych klient√≥w IRC.
 
 %prep
 %setup -q
