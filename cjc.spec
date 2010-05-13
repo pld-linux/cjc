@@ -9,6 +9,9 @@ Group:		Applications/Communications
 Source0:	http://cjc.jajcus.net/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	ffec1743b44618d5efa3b211de90e63a
 URL:		http://cjc.jajcus.net/
+BuildRequires:	python
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 Requires:	python-pyxmpp >= 1.1.0
 Suggests:	ca-certificates
 Suggests:	python-modules-sqlite
