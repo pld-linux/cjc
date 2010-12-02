@@ -4,14 +4,16 @@ Name:		cjc
 Version:	1.2.0
 Release:	2
 Epoch:		1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Communications
 Source0:	http://cjc.jajcus.net/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	ffec1743b44618d5efa3b211de90e63a
+Patch0:		%{name}-pyc.patch
 URL:		http://cjc.jajcus.net/
-BuildRequires:	python
-BuildRequires:	python-modules
+BuildRequires:	python >= 1:2.6
+BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.234
 Requires:	python-pyxmpp >= 1.1.0
 Suggests:	ca-certificates
 Suggests:	python-modules-sqlite
@@ -28,6 +30,7 @@ podobnym do tego znanego z popularnych klientów IRC.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} \
@@ -40,24 +43,24 @@ rm -rf $RPM_BUILD_ROOT
 	prefix=%{_prefix} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_prefix}/share/doc
+%{__rm} -r $RPM_BUILD_ROOT%{_prefix}/share/doc
 
-%py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}
-%py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}/plugins
+%py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}
+%py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}{,/ui}/*.py
+%py_postclean %{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README TODO ChangeLog doc/manual.html
-%attr(755,root,root) %{_bindir}/*
+%doc ChangeLog README TODO doc/manual.html
+%attr(755,root,root) %{_bindir}/cjc
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/%{name}
+%{_datadir}/%{name}/%{name}/*.py[co]
 %dir %{_datadir}/%{name}/%{name}/ui
+%{_datadir}/%{name}/%{name}/ui/*.py[co]
 %dir %{_datadir}/%{name}/plugins
-%{_datadir}/%{name}/%{name}/*.pyc
-%{_datadir}/%{name}/%{name}/ui/*.pyc
-%{_datadir}/%{name}/plugins/*
+%{_datadir}/%{name}/plugins/*.py[co]

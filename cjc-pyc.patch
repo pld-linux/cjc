@@ -1,0 +1,11 @@
+--- cjc-1.2.0/cjc/plugins.py.orig	2010-04-26 19:06:55.000000000 +0200
++++ cjc-1.2.0/cjc/plugins.py	2010-12-02 20:07:13.038114393 +0100
+@@ -238,7 +238,7 @@
+             for path in self._plugin_dirs:
+                 sys.path = [path] + sys_path
+                 for suffix in (".py", ".pyc", ".pyo"):
+-                    filename = os.path.join(path, name + ".py")
++                    filename = os.path.join(path, name + suffix)
+                     if os.path.exists(filename):
+                         break
+                     filename = None
