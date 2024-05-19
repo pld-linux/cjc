@@ -9,14 +9,14 @@ Group:		Applications/Communications
 Source0:	http://cloud.github.com/downloads/Jajcus/cjc/cjc-%{version}.tar.gz
 # Source0-md5:	fbb161f9d77ddb477f4d4a8165e2eb5b
 Patch0:		%{name}-pyc.patch
-URL:		http://cjc.jajcus.net/
+URL:		https://github.com/Jajcus/cjc
 BuildRequires:	python >= 1:2.6
 BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.234
 Requires:	python-pyxmpp >= 1.1.2
 Suggests:	ca-certificates
-Suggests:	python-modules-sqlite
+Suggests:	python-modules-sqlite >= 1:2.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
